@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Auth\LoginForm;
+use App\Http\Livewire\Auth\RegisterForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/register', function () {
+    return view('auth.register');
+});
+
+Route::group(['prefix'=>'user'],function(){
+    Route::get('/register',RegisterForm::class)->name('register');
+    Route::get('/login',LoginForm::class)->name('login');
+
+});
+
+
