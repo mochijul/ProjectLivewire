@@ -9,6 +9,7 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Role</th>
                 <th></th>
             </tr>
         </thead>
@@ -18,9 +19,10 @@
                     <th scope="row">{{ $index + 1 }}</th>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->role->name }}</td>
                     <td class="float-rigt" style=" white-space: nowrap; width: 1%;">
                         <button type="button" class="btn btn-default btn-sm">Detail</button>
-                        <button type="button" class="btn btn-default btn-sm">Edit</button>
+                        <a href="{{route('editeuser',['id'=>$user->id])}}"><button type="button" class="btn btn-default btn-sm" wire:click=""> Edit</button> </a>
 
                         @if ($confirming === $user->id)
                             <button type="button" class="btn btn-danger btn-sm"

@@ -19,7 +19,7 @@
             {{$message}}
             @enderror
             <label for="inputEmail" class="sr-only ">Email address</label>
-            <input type="email" id="inputEmail" class="form-control mb-2 is-invalid" placeholder="Email address" value="" wire:model='email'>
+            <input type="email" id="inputEmail" class="form-control mb-2 " placeholder="Email address" value="" wire:model='email'>
             @error('email')
             {{$message}}
             @enderror
@@ -34,7 +34,7 @@
             {{$message}}
             @enderror
             <label for="inputRetypePassword" class="sr-only ">Role</label>
-            <select class="form-control mb-2" wire:model='roleid'>
+            <select class="form-control mb-2" wire:model='role_id'>
                 <option value="" selected active>Select your option..</option>
                 @foreach ($roles as $role)
                 <option value="{{$role->id}}">{{$role->name}}</option>

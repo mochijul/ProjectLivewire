@@ -17,7 +17,7 @@ class UserTable extends Component
     ];
     public function render()
     {
-        $this->users = User::orderby('id','desc')->get();
+        $this->users = User::with(['role'])->orderby('id','desc')->get();
         return view('livewire.user.user-table');
     }
 

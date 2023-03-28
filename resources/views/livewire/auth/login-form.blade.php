@@ -15,7 +15,7 @@
                 <div class="alert alert-success">{{ session('message') }}</div>
             @endif
             <label for="inputEmail" class="sr-only ">Email address</label>
-            <input type="email" id="inputEmail" class="form-control mb-2 is-invalid" placeholder="Email address" required=""  wire:model='email'>
+            <input type="email" id="inputEmail" class="form-control mb-2 " placeholder="Email address" required=""  wire:model='email'>
             @error('email')
             {{$message}}
             @enderror

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Livewire\Auth\LoginForm;
 use App\Http\Livewire\Auth\RegisterForm;
+use App\Http\Livewire\User\UserEdit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +29,7 @@ Route::group(['prefix'=>'user','middleware'=>'guest'],function(){
 
 Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function(){
     Route::view('/user/manage','user.manageuser')->name('manageuser');
+    Route::get('/user/edit/{id}',[UserController::class,'edit'])->name('editeuser');
     Route::view('/product/manage','product.manageproduct')->name('manageproduct');
     Route::view('/','main')->name('dashboard');
 });

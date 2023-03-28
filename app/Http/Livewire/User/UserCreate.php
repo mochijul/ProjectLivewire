@@ -11,7 +11,7 @@ class UserCreate extends Component
 {
     public $name;
     public $email;
-    public $roleid;
+    public $role_id;
     public $roles;
     public $password;
     public $password_confirmation;
@@ -24,7 +24,7 @@ class UserCreate extends Component
         $validate = $this->validate([
             'name'=>'required|min:5',
             'email'=>'required|email|unique:users,email',
-            'roleid'=>'required',
+            'role_id'=>'required',
             'password'=>'required|confirmed',
         ]);
         session()->flash('message',$validate);
@@ -32,7 +32,7 @@ class UserCreate extends Component
         User::create([
             'name'=>$validate['name'],
             'email'=>$validate['email'],
-            'roleid'=>$validate['roleid'],
+            'role_id'=>$validate['role_id'],
             'password'=>Hash::make($validate['password']),
         ]);
         $this->emit('userAdded');

@@ -10,9 +10,9 @@
         </button>
         <div class="collapse navbar-collapse text-light" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-link "><a href="{{route('dashboard')}}">Dashboard</a></li>
-            <li class="nav-link "><a href="{{route('manageproduct')}}">Manage Product</a></li>
-            <li class="nav-link "><a class="text-light" href="{{route('manageuser')}}">Manage User</a> </li>
+            <a href="{{route('dashboard')}}"><li class="nav-link ">Dashboard</li></a>
+            <a href="{{route('manageproduct')}}"><li class="nav-link ">Manage Product</li></a>
+            <a href="{{route('manageuser')}}"><li class="nav-link ">Manage User </li></a>
         </ul>
         <ul class="navbar-nav ml-auto text-light">
             <li class="nav-item">
