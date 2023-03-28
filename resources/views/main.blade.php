@@ -1,13 +1,16 @@
 @extends('layouts.dashboard')
 @section('dashboardcontent')
     <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mt-5">
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-            </ol>
-        </nav>
-        <div class="card">
+
+        <div class="card mt-5">
             <div class="card-body">
+                <h2>Selamat datang di web pengelolaan barang kami!
+
+                </h2>
+                <p>Kami adalah platform pengelolaan barang yang bertujuan untuk memberikan solusi yang efektif dan efisien
+                    untuk semua kebutuhan pengelolaan barang Anda. Dengan berbagai fitur canggih yang kami sediakan, Anda
+                    dapat dengan mudah mengelola dan melacak inventaris Anda, menghemat waktu dan usaha Anda dalam mengatur
+                    barang.</p>
                 {{-- @livewire('user.user-create') --}}
             </div>
             {{-- @livewire('user.user-table') --}}
@@ -15,9 +18,9 @@
     </div>
 @endsection
 @section('script')
-<script>
-    $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-</script>
+    <script>
+        $('#myModal').on('shown.bs.modal', function() {
+            $('#myInput').trigger('focus')
+        })
+    </script>
 @endsection

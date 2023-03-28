@@ -21,7 +21,6 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->role->name }}</td>
                     <td class="float-rigt" style=" white-space: nowrap; width: 1%;">
-                        <button type="button" class="btn btn-default btn-sm">Detail</button>
                         <a href="{{route('editeuser',['id'=>$user->id])}}"><button type="button" class="btn btn-default btn-sm" wire:click=""> Edit</button> </a>
 
                         @if ($confirming === $user->id)
