@@ -38,6 +38,7 @@ class RegisterForm extends Component
         ]);
 
         session()->flash('message','Registration success !');
+        return redirect()->route('login');
 
 
 

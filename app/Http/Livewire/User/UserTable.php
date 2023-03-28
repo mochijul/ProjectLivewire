@@ -17,8 +17,12 @@ class UserTable extends Component
     ];
     public function render()
     {
-        $this->users = User::all();
+        $this->users = User::orderby('id','desc')->get();
         return view('livewire.user.user-table');
+    }
+
+    public function destroyAbort(){
+        $this->confirming = null;
     }
 
     public function destroyConfirm($userId){

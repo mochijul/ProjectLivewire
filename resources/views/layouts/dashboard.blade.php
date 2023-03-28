@@ -10,13 +10,13 @@
         </button>
         <div class="collapse navbar-collapse text-light" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-link ">Dashboard</li>
-            <li class="nav-link ">Product</li>
-            <li class="nav-link ">Manage User</li>
+            <li class="nav-link "><a href="{{route('dashboard')}}">Dashboard</a></li>
+            <li class="nav-link "><a href="{{route('manageproduct')}}">Manage Product</a></li>
+            <li class="nav-link "><a class="text-light" href="{{route('manageuser')}}">Manage User</a> </li>
         </ul>
         <ul class="navbar-nav ml-auto text-light">
             <li class="nav-item">
-            <a class="nav-link " href="#">Logout</a>
+                @livewire('component.logout')
             </li>
         </ul>
         </div>
