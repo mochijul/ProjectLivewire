@@ -17,6 +17,7 @@ class UserCreate extends Component
     public $password_confirmation;
 
     public function mount(){
+
         $this->roles = Role::all();
     }
 
@@ -35,7 +36,14 @@ class UserCreate extends Component
             'role_id'=>$validate['role_id'],
             'password'=>Hash::make($validate['password']),
         ]);
+
         $this->emit('userAdded');
+        $this->name = null;
+        $this->email = null;
+        $this->role = null;
+        $this->password = null;
+        $this->password_confirmation = null;
+
         session()->flash('message','Registration success !');
     }
 

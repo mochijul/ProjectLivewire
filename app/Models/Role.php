@@ -15,9 +15,6 @@ class Role extends Model
         'name',
     ];
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'foreign_key', 'role_id');
-    }
+
 
 }

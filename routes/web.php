@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 
 Route::group(['prefix'=>'user','middleware'=>'guest'],function(){
@@ -27,10 +27,16 @@ Route::group(['prefix'=>'user','middleware'=>'guest'],function(){
     Route::view('/login','auth.login')->name('login');
 });
 
-Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'dashboard','middleware'=>['auth','role:superadmin']],function(){
     Route::view('/user/manage','user.manageuser')->name('manageuser');
     Route::get('/user/edit/{id}',[UserController::class,'edit'])->name('editeuser');
+});
+
+Route::group(['prefix'=>'dashboard','middleware'=>['auth','role:user,admin,superadmin']],function(){
     Route::view('/product/manage','product.manageproduct')->name('manageproduct');
+});
+
+Route::group(['prefix'=>'dashboard','middleware'=>['auth']],function(){
     Route::view('/','main')->name('dashboard');
 });
 

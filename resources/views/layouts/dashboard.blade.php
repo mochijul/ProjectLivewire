@@ -11,10 +11,15 @@
         <div class="collapse navbar-collapse text-light" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <a href="{{route('dashboard')}}"><li class="nav-link ">Dashboard</li></a>
+            @if (in_array(auth()->user()->role->name,["superadmin","admin"]))
             <a href="{{route('manageproduct')}}"><li class="nav-link ">Manage Product</li></a>
-            <a href="{{route('manageuser')}}"><li class="nav-link ">Manage User </li></a>
+            @endif
+            @if (in_array(auth()->user()->role->name,["superadmin"]))
+                <a href="{{route('manageuser')}}"><li class="nav-link ">Manage User </li></a>
+            @endif
         </ul>
         <ul class="navbar-nav ml-auto text-light">
+            <li class="nav-item nav-link">{{auth()->user()->email}} as {{auth()->user()->role->name}}</li>
             <li class="nav-item">
                 @livewire('component.logout')
             </li>
@@ -22,6 +27,5 @@
         </div>
     </nav>
     @yield('dashboardcontent')
-
 @endsection
 @yield('script')
