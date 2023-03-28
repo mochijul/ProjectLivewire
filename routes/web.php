@@ -19,14 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
 
 Route::group(['prefix'=>'user'],function(){
-    Route::get('/register',RegisterForm::class)->name('register');
-    Route::get('/login',LoginForm::class)->name('login');
+    Route::view('/register','auth.register')->name('register');
+    Route::view('/login','auth.login')->name('login');
+});
 
+Route::group(['prefix'=>'dashboard'],function(){
+    Route::view('/user/manage','user.manageuser')->name('manageuser');
 });
 
 

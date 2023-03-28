@@ -29,4 +29,9 @@ class ViewTest extends TestCase
         $this->view('auth.register')
             ->assertSee("Please register");
     }
+
+    public function test_view_manage_user(){
+        $this->view('user.manageuser')
+            ->assertSee("Dashboard");
+    }
 }
