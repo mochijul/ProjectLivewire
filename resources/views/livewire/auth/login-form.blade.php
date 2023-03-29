@@ -29,7 +29,14 @@
             <span>
                 don't have an account ? <a class="mt-4" href="{{route('register')}}">Register</a>
             </span>
+
+            <p class="mt-5" style="font-size: 13px">
+                <b>User</b> email:user@user.com password:user <br>
+                <b>Admin</b> email:admin@admin.com password:admin <br>
+                <b>Superadmin</b> email:superadmin@superadmin.com password:superadmin
+            </p>
         </form>
+
     </div>
 </div>
 
